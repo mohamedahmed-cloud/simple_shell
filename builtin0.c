@@ -2,7 +2,7 @@
 
 /**
  * _mycd - changes the current directory of the process
- * @Info: Structure containing potential arguments. Used to maintain
+ * @Inf: Structure containing potential arguments. Used to maintain
  * constant function prototype.
  * Return: Always 0
  */
@@ -83,7 +83,7 @@ int _myexit(info_t *Inf)
 }
 /**
  * _myhelp - changes the current directory of the process
- * @Info: Structure containing potential arguments. Used to maintain
+ * @Inf: Structure containing potential arguments. Used to maintain
  * constant function prototype.
  * Return: Always 0
  */
