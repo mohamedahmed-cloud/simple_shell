@@ -1,3 +1,3 @@
 git add *
-git commit -m "Correct Some betty styling error"
+git commit -m "update readme file"
 git push
