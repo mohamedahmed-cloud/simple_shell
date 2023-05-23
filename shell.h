@@ -70,7 +70,7 @@ typedef struct liststr
  * @cmd_buf: address of pointer to cmd_buf, on if chaining
  * @cmd_buf_type: CMD_type ||, &&, ;
  * @readfd: the fd from which tut
- * @histcount: the history lin
+ * @histcount: the history line number count
  */
 typedef struct passinfo
 {
@@ -239,7 +239,7 @@ void check_chain(info_t *, char *, size_t *, size_t, size_t);
 int replace_alias(info_t *);
 int replace_vars(info_t *);
 int replace_string(char **, char *);
-#define S_IFREG  0100000
+// #define S_IFREG  0100000
 
 #endif
 
