@@ -27,8 +27,7 @@ char *convert_number(long int number, int base, int flags)
 	ptr = &buffer[49];
 	*ptr = '\0';
 
-	do
-	{
+	do {
 		*--ptr = array[n % base];
 		n /= base;
 	} while (n != 0);

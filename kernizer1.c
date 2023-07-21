@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * **stringtow2 -  function kernizer 1
+ * **strtow2 -  function kernizer 1
  * @string: the input
  * @dimleter: the delemieter
  * Return: a pointer.
@@ -16,7 +16,8 @@ char **strtow2(char *string, char dimleter)
 
 	for (i = 0; string[i] != '\0'; i++)
 		if ((string[i] != dimleter && string[i + 1] == dimleter) ||
-			(string[i] != dimleter && !string[i + 1]) || string[i + 1] == dimleter)
+			(string[i] != dimleter && !string[i + 1]) ||
+			string[i + 1] == dimleter)
 			our_words++;
 
 	if (our_words == 0)
@@ -32,7 +33,7 @@ char **strtow2(char *string, char dimleter)
 			i++;
 		k = 0;
 		while (string[i + k] != dimleter && string[i + k]
-		&& string[i + k] != dimleter)
+			   && string[i + k] != dimleter)
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])

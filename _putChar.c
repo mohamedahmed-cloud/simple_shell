@@ -1,10 +1,9 @@
 #include "shell.h"
 /**
  * _putchar - writes in the console
- * @c: The charactert
+ * @ch: The charactert
  *
  * Return: On success 1 or 0
- 
  */
 int _putchar(char ch)
 {

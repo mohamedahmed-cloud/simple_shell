@@ -5,12 +5,13 @@
  * @info: the parameter passed
  * @buffer: the char buffer
  * @p: address passed
- * @i: starting point 
+ * @i: starting point
  * @length: our lenght.
  *
  * Return: don't return any thing.
  */
-void check_chain(info_t *info, char *buffer, size_t *p, size_t i, size_t length)
+void check_chain(info_t *info, char *buffer,
+				 size_t *p, size_t i, size_t length)
 {
 	size_t j = *p;
 

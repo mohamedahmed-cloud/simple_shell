@@ -1,8 +1,8 @@
 #include "shell.h"
 
 /**
- * fork_cmd - to fork the execution 
- * @info: the parameter
+ * fork_cmd - to fork the execution
+ * @information: the parameter
  *
  * Return: don't return any thing.
  */
@@ -21,7 +21,8 @@ void fork_cmd(info_t *information)
 
 	if (child_process == 0)
 	{
-		if (execve(information->path, information->argv, get_environ(information)) == -1)
+		if (execve(information->path, information->argv,
+				   get_environ(information)) == -1)
 		{
 			free_info(information, 1);
 			if (errno == EACCES)
@@ -30,8 +31,7 @@ void fork_cmd(info_t *information)
 			}
 			exit(1);
 		}
-	}
-	else
+	} else
 	{
 		wait(&(information->status));
 		if (WIFEXITED(information->status))
