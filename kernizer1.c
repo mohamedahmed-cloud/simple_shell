@@ -24,7 +24,6 @@ char **strtow2(char *string, char dimleter)
 		return (NULL);
 
 	s = malloc((1 + our_words) * sizeof(char *));
-
 	if (!s)
 		return (NULL);
 	for (i = 0, j = 0; j < our_words; j++)
