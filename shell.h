@@ -97,7 +97,7 @@ typedef struct passinfo
 
 #define INFO_INIT \
 {NULL, NULL, NULL, 0, 0, 0, 0, NULL, NULL, NULL, NULL, NULL, 0, 0, NULL, \
-        0, 0, 0}
+0, 0, 0}
 
 /**
  * struct builtin - contains a builtin string and related function
@@ -243,11 +243,17 @@ int populate_env_list(info_t *);
 
 /* added*/
 int set_alias(info_t *Inf, char *string);
+
 int _myalias(info_t *Inf);
+
 int unset_alias(info_t *Inf, char *string);
+
 int print_alias(list_t *node);
+
 ssize_t get_input(info_t *Inf);
+
 ssize_t input_buf(info_t *Inf, char **buffer, size_t *len);
+
 ssize_t read_buf(info_t *Inf, char *buffer, size_t *i);
 
 char **get_environ(info_t *);
