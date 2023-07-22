@@ -2,13 +2,13 @@
 
 
 /**
- * free_info - frees info_t struct fields
+ * freeInformation - frees info_t struct fields
  * @Inf: struct address
  * @all: true if freeing all fields
  */
-void free_info(info_t *Inf, int all)
+void freeInformation(info_t *Inf, int all)
 {
-	ffree(Inf->argv);
+	fS(Inf->argv);
 	Inf->argv = NULL;
 	Inf->path = NULL;
 	if (all)
@@ -16,16 +16,16 @@ void free_info(info_t *Inf, int all)
 		if (!Inf->cmd_buf)
 			free(Inf->arg);
 		if (Inf->env)
-			free_list(&(Inf->env));
+			freeList(&(Inf->env));
 		if (Inf->history)
-			free_list(&(Inf->history));
+			freeList(&(Inf->history));
 		if (Inf->alias)
-			free_list(&(Inf->alias));
-		ffree(Inf->environ);
+			freeList(&(Inf->alias));
+		fS(Inf->environ);
 		Inf->environ = NULL;
-		bfree((void **) Inf->cmd_buf);
+		freePtr((void **) Inf->cmd_buf);
 		if (Inf->readfd > 2)
 			close(Inf->readfd);
-		_putchar(BUF_FLUSH);
+		_putcharacter(BUF_FLUSH);
 	}
 }

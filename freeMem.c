@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * ffree - frees a stri
+ * fS - frees a string
  * @pointer: string
  */
-void ffree(char **pointer)
+void fS(char **pointer)
 {
 	char **a = pointer;
 

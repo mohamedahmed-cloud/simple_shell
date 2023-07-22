@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _unsetenv - Remove an environment variable
+ * unsetEnv - Remove an environment variable
  * @Inf: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
  * @var: the string env var property
  *  Return: 1 on delete, 0 otherwise
  */
-int _unsetenv(info_t *Inf, char *var)
+int unsetEnv(info_t *Inf, char *var)
 {
 	list_t *node = Inf->env;
 	size_t i = 0;
@@ -18,10 +18,10 @@ int _unsetenv(info_t *Inf, char *var)
 
 	while (node)
 	{
-		p = starts_with(node->str, var);
+		p = startsWith(node->str, var);
 		if (p && *p == '=')
 		{
-			Inf->env_changed = delete_node_at_index(&(Inf->env), i);
+			Inf->env_changed = deleteAtIndex(&(Inf->env), i);
 			i = 0;
 			node = Inf->env;
 			continue;

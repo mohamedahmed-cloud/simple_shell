@@ -2,11 +2,11 @@
 
 
 /**
- * _atoi - converts a string to an integer
+ * _fsti - converts a string to an integer
  * @string: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  */
-int _atoi(const char *string)
+int _fsti(const char *string)
 {
 	int i, s = 1;
 	unsigned int result = 0;

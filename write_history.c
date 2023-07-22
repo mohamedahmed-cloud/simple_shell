@@ -2,15 +2,15 @@
 
 
 /**
- * write_history - creates a file, or appends to an existing file
+ * writeHistory - creates a file, or appends to an existing file
  * @Inf: the parameter struct
  *
  * Return: 1 on success, else -1
  */
-int write_history(info_t *Inf)
+int writeHistory(info_t *Inf)
 {
 	ssize_t fd;
-	char *filename = get_history_file(Inf);
+	char *filename = getHistoryFile(Inf);
 	list_t *node = NULL;
 
 	if (!filename)
@@ -22,10 +22,10 @@ int write_history(info_t *Inf)
 		return (-1);
 	for (node = Inf->history; node; node = node->next)
 	{
-		_putsfd(node->str, fd);
-		_putfd('\n', fd);
+		_printFd(node->str, fd);
+		printFd('\n', fd);
 	}
-	_putfd(BUF_FLUSH, fd);
+	printFd(BUF_FLUSH, fd);
 	close(fd);
 	return (1);
 }

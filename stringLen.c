@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _strlen - give me string lenght
+ * _strLen - give me string lenght
  * @string: the string needed to give me lenght
  *
  * Return: lenght of string.
  */
 
-int _strlen(char *string)
+int _strLen(char *string)
 {
 	int i = 0;
 

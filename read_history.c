@@ -3,17 +3,17 @@
 
 
 /**
- * read_history - reads history from file
+ * readHistory - reads history from file
  * @Inf: the parameter struct
  *
  * Return: histcount on success, 0 otherwise
  */
-int read_history(info_t *Inf)
+int readHistory(info_t *Inf)
 {
 	int i, last = 0, linecount = 0;
 	ssize_t fd, rdlen, fsize = 0;
 	struct stat st;
-	char *buf = NULL, *filename = get_history_file(Inf);
+	char *buf = NULL, *filename = getHistoryFile(Inf);
 
 	if (!filename)
 		return (0);
@@ -38,15 +38,15 @@ int read_history(info_t *Inf)
 		if (buf[i] == '\n')
 		{
 			buf[i] = 0;
-			build_history_list(Inf, buf + last, linecount++);
+			start_history_list(Inf, buf + last, linecount++);
 			last = i + 1;
 		}
 	if (last != i)
-		build_history_list(Inf, buf + last, linecount++);
+		start_history_list(Inf, buf + last, linecount++);
 	free(buf);
 	Inf->histcount = linecount;
 	while (Inf->histcount-- >= HIST_MAX)
-		delete_node_at_index(&(Inf->history), 0);
-	renumber_history(Inf);
+		deleteAtIndex(&(Inf->history), 0);
+	renumberHistory(Inf);
 	return (Inf->histcount);
 }

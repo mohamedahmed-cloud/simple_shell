@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * find_cmd - finds a comm
- * @info: the paramet
+ * findCommand - finds a command
+ * @info: the parameter
  *
  * Return: void
  */
-void find_cmd(info_t *info)
+void findCommand(info_t *info)
 {
 	char *path = NULL;
 	int i, k;
@@ -18,32 +18,32 @@ void find_cmd(info_t *info)
 	}
 	for (i = 0, k = 0; info->arg[i]; i++)
 	{
-		if (!is_delim(info->arg[i], " \t\n"))
+		if (!isDelim(info->arg[i], " \t\n"))
 			k++;
 	}
 
 	if (!k)
 		return;
 
-	path = find_path(info, _getenv(info, "PATH="), info->argv[0]);
+	path = pathFinder(info, _getEnvironment(info, "PATH="), info->argv[0]);
 
 	if (path)
 	{
 		info->path = path;
-		fork_cmd(info);
+		forkCommand(info);
 	}
 
 	else
 	{
-	if ((interactive(info) || _getenv(info, "PATH=") || info->argv[0][0] == '/')
-	&& is_cmd(info, info->argv[0]))
+	if ((inInteractive(info) || _getEnvironment(info, "PATH=") || info->argv[0][0] == '/')
+		&& isCmd(info, info->argv[0]))
 	{
-		fork_cmd(info);
+		forkCommand(info);
 	}
 	else if (*(info->arg) != '\n')
 	{
 		info->status = 127;
-		print_error(info, "not found\n");
+		printError(info, "not found\n");
 	}
 }
 

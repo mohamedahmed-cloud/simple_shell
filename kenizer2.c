@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * **strtow - splits the stringing.
+ * **splitStr - splits the stringing.
  * @string: the input
- * @d: the delimeter
+ * @d: the delimiter
  * Return: a pointer to an
  */
 
-char **strtow(char *string, char *d)
+char **splitStr(char *string, char *d)
 {
 	int i, j, k, m, our_words = 0;
 	char **s;
@@ -19,8 +19,8 @@ char **strtow(char *string, char *d)
 		d = " ";
 
 	for (i = 0; string[i] != '\0'; i++)
-		if (!is_delim(string[i], d) && (is_delim(string[i + 1], d)
-		|| !string[i + 1]))
+		if (!isDelim(string[i], d) && (isDelim(string[i + 1], d)
+									   || !string[i + 1]))
 			our_words++;
 	if (our_words == 0)
 		return (NULL);
@@ -30,10 +30,10 @@ char **strtow(char *string, char *d)
 
 	for (i = 0, j = 0; j < our_words; j++)
 	{
-		while (is_delim(string[i], d))
+		while (isDelim(string[i], d))
 			i++;
 		k = 0;
-		while (!is_delim(string[i + k], d) && string[i + k])
+		while (!isDelim(string[i + k], d) && string[i + k])
 			k++;
 		s[j] = malloc((k + 1) * sizeof(char));
 		if (!s[j])

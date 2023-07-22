@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * _puts - print the string.
+ * printStr - print the string.
  * @string: string to print.
  *
  * Return: return void.
  */
-void _puts(char *string)
+void printStr(char *string)
 {
 	int i = 0;
 
@@ -13,7 +13,7 @@ void _puts(char *string)
 		return;
 	while (string[i] != '\0')
 	{
-		_putchar(string[i]);
+		_putcharacter(string[i]);
 		i++;
 	}
 }

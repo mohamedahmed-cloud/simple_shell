@@ -1,0 +1,3 @@
+D:/simple_shell/cmake-build-debug/CMakeFiles/simple_shell.dir
+D:/simple_shell/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/simple_shell/cmake-build-debug/CMakeFiles/rebuild_cache.dir

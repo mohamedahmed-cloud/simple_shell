@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- **_strchr - locates a character in a string
+ **searchStr - locates a character in a string
  *@character: the character to look for
  *@string: the string to be parsed
  *Return: (s) a pointer to the memory area s
  */
-char *_strchr(char *string, char character)
+char *searchStr(char *string, char character)
 {
 	do {
 		if (*string == character)

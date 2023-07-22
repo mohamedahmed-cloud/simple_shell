@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * fork_cmd - to fork the execution
+ * forkCommand - to fork the execution
  * @information: the parameter
  *
  * Return: don't return any thing.
  */
 
-void fork_cmd(info_t *information)
+void forkCommand(info_t *information)
 {
 
 	pid_t child_process;
@@ -22,9 +22,9 @@ void fork_cmd(info_t *information)
 	if (child_process == 0)
 	{
 		if (execve(information->path, information->argv,
-				   get_environ(information)) == -1)
+				   getEnvironment(information)) == -1)
 		{
-			free_info(information, 1);
+			freeInformation(information, 1);
 			if (errno == EACCES)
 			{
 				exit(126);
@@ -39,7 +39,7 @@ void fork_cmd(info_t *information)
 			information->status = WEXITSTATUS(information->status);
 			if (information->status == 126)
 			{
-				print_error(information, "Permission denied\n");
+				printError(information, "Permission denied\n");
 			}
 		}
 	}

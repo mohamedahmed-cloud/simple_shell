@@ -2,14 +2,14 @@
 
 
 /**
- * convert_number - converter function, a clone of itoa
+ * numberConverting - converter function, a clone of itoa
  * @number: number
  * @flags: argument flags
  * @base: base
  *
  * Return: string
  */
-char *convert_number(long int number, int base, int flags)
+char *numberConverting(long int number, int base, int flags)
 {
 	static char *array;
 	static char buffer[50];

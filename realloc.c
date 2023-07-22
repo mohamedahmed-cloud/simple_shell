@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _realloc - reallcate the memory
+ * myReallocate - reallcate the memory
  * @pointer: pointer to the previous size
  * @our_old_size: our old size
  * @our_new_size: our new size
@@ -9,8 +9,8 @@
  * Return: the pionter to the new size.
  */
 
-void *_realloc(void *pointer,
-	unsigned int our_old_size, unsigned int our_new_size)
+void *myReallocate(void *pointer,
+				   unsigned int our_old_size, unsigned int our_new_size)
 {
 	char *p;
 

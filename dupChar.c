@@ -1,14 +1,14 @@
 /**
- * dup_chars -	dubug the chars.
+ * debugChar -	debug the chars.
  * @pathstr: the path of the string
  * @start_point: start_point of all of you
  * @stop_point:	to stop_point
  *
- * Return: pointe
+ * Return: point
  */
 
 
-char *dup_chars(char *pathstr, int start_point, int stop_point)
+char *debugChar(char *pathstr, int start_point, int stop_point)
 {
 	static char buf[1024];
 	int i = 0, k = 0;

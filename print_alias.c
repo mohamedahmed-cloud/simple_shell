@@ -1,23 +1,23 @@
 #include "shell.h"
 
 /**
- * print_alias - prints an alias string
+ * printAlias - prints an alias string
  * @node: the alias node
  *
  * Return: Always 0 on success, 1 on error
  */
-int print_alias(list_t *node)
+int printAlias(list_t *node)
 {
 	char *p = NULL, *a = NULL;
 
 	if (node)
 	{
-		p = _strchr(node->str, '=');
+		p = searchStr(node->str, '=');
 		for (a = node->str; a <= p; a++)
-			_putchar(*a);
-		_putchar('\'');
-		_puts(p + 1);
-		_puts("'\n");
+			_putcharacter(*a);
+		_putcharacter('\'');
+		printStr(p + 1);
+		printStr("'\n");
 		return (0);
 	}
 	return (1);

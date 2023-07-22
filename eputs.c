@@ -2,12 +2,12 @@
 
 
 /**
- * _eputs - prints an input string
+ * _ePut - prints an input string
  * @string: the string to be printed
  *
  * Return: Nothing
  */
-void _eputs(char *string)
+void _ePut(char *string)
 {
 	int i = 0;
 
@@ -15,7 +15,7 @@ void _eputs(char *string)
 		return;
 	while (string[i] != '\0')
 	{
-		_eputchar(string[i]);
+		_ePutChar(string[i]);
 		i++;
 	}
 }

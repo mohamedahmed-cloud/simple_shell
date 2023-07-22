@@ -2,20 +2,20 @@
 
 
 /**
- * build_history_list - adds entry to a history linked list
+ * start_history_list - adds entry to a history linked list
  * @Inf: Structure containing potential arguments. Used to maintain
  * @buf: buffer
- * @linecount: the history linecount, histcount
+ * @line_count: the history line count, hist count
  *
  * Return: Always 0
  */
-int build_history_list(info_t *Inf, char *buf, int linecount)
+int start_history_list(info_t *Inf, char *buf, int line_count)
 {
 	list_t *node = NULL;
 
 	if (Inf->history)
 		node = Inf->history;
-	add_node_end(&node, buf, linecount);
+	node_adding_end(&node, buf, line_count);
 
 	if (!Inf->history)
 		Inf->history = node;

@@ -4,14 +4,14 @@
 
 
 /**
- * read_buf - reads a buffer
+ * readBuffer - reads a buffer
  * @buffer: buffer
  * @Inf: parameter struct
  * @i: size
  *
  * Return: r
  */
-ssize_t read_buf(info_t *Inf, char *buffer, size_t *i)
+ssize_t readBuffer(info_t *Inf, char *buffer, size_t *i)
 {
 	ssize_t r = 0;
 

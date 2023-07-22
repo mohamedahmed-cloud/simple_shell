@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * is_chain - test if
+ * isChain - test if
  * @info: information
  * @buffer: buffer passed.
  * @p: address.
@@ -9,7 +9,7 @@
  * Return: 1 if success.
  */
 
-int is_chain(info_t *info, char *buffer, size_t *p)
+int isChain(info_t *info, char *buffer, size_t *p)
 {
 	size_t j = *p;
 

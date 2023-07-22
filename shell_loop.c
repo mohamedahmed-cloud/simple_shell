@@ -3,44 +3,44 @@
 #include "shell.h"
 
 /**
- * hsh - the manin function in shell loop
+ * shellLoop - the manin function in shell loop
  * @info: the parameters.
  * @argumentVector: the vector
  *
  * Return: 0 on success
  */
-int hsh(info_t *info, char **argumentVector)
+int shellLoop(info_t *info, char **argumentVector)
 {
 	ssize_t r = 0;
 	int builtin_return = 0;
 
 	while (r != -1 && builtin_return != -2)
 	{
-		clear_info(info);
-		if (interactive(info))
+		clearInformation(info);
+		if (inInteractive(info))
 		{
-			_puts("$ ");
+			printStr("$ ");
 		}
 
-		_eputchar(BUF_FLUSH);
-		r = get_input(info);
+		_ePutChar(BUF_FLUSH);
+		r = getInput(info);
 
 		if (r != -1)
 		{
-			set_info(info, argumentVector);
-			builtin_return = find_builtin(info);
+			setInformation(info, argumentVector);
+			builtin_return = findFunction(info);
 			if (builtin_return == -1)
-				find_cmd(info);
+				findCommand(info);
 		}
-		else if (interactive(info))
-			_putchar('\n');
+		else if (inInteractive(info))
+			_putcharacter('\n');
 
-		free_info(info, 0);
+		freeInformation(info, 0);
 	}
-	write_history(info);
-	free_info(info, 1);
+	writeHistory(info);
+	freeInformation(info, 1);
 
-	if (!interactive(info) && info->status)
+	if (!inInteractive(info) && info->status)
 	{
 		exit(info->status);
 	}

@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * _setenv - Initialize a new environment variable,
+ * _mySetEnv - Initialize a new environment variable,
  *             or modify an existing one
  * @Inf: Structure containing potential arguments. Used to maintain
  *        constant function prototype.
@@ -9,7 +9,7 @@
  * @var: the string env var property
  *  Return: Always 0
  */
-int _setenv(info_t *Inf, char *var, char *value)
+int _mySetEnv(info_t *Inf, char *var, char *value)
 {
 	char *buffer = NULL;
 	list_t *node;
@@ -18,16 +18,16 @@ int _setenv(info_t *Inf, char *var, char *value)
 	if (!var || !value)
 		return (0);
 
-	buffer = malloc(_strlen(var) + _strlen(value) + 2);
+	buffer = malloc(_strLen(var) + _strLen(value) + 2);
 	if (!buffer)
 		return (1);
-	_strcpy(buffer, var);
-	_strcat(buffer, "=");
-	_strcat(buffer, value);
+	_strCopy(buffer, var);
+	strConcat(buffer, "=");
+	strConcat(buffer, value);
 	node = Inf->env;
 	while (node)
 	{
-		p = starts_with(node->str, var);
+		p = startsWith(node->str, var);
 		if (p && *p == '=')
 		{
 			free(node->str);
@@ -37,7 +37,7 @@ int _setenv(info_t *Inf, char *var, char *value)
 		}
 		node = node->next;
 	}
-	add_node_end(&(Inf->env), buffer, 0);
+	node_adding_end(&(Inf->env), buffer, 0);
 	free(buffer);
 	Inf->env_changed = 1;
 	return (0);

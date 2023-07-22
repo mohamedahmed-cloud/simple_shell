@@ -1,14 +1,14 @@
 #include "shell.h"
 /**
- * list_to_strings - give me list from string.
+ * listToStrings - give me list from string.
  * @headPointer: head of linked list
  *
  * Return: array of string.
  */
-char **list_to_strings(list_t *headPointer)
+char **listToStrings(list_t *headPointer)
 {
 	list_t *node = headPointer;
-	size_t i = list_len(headPointer), j;
+	size_t i = lengthOfList(headPointer), j;
 	char **strs;
 	char *str;
 
@@ -23,7 +23,7 @@ char **list_to_strings(list_t *headPointer)
 
 	for (i = 0; node; node = node->next, i++)
 	{
-		str = malloc(_strlen(node->str) + 1);
+		str = malloc(_strLen(node->str) + 1);
 
 		if (!str)
 		{
@@ -33,7 +33,7 @@ char **list_to_strings(list_t *headPointer)
 			return (NULL);
 		}
 
-		str = _strcpy(str, node->str);
+		str = _strCopy(str, node->str);
 		strs[i] = str;
 	}
 

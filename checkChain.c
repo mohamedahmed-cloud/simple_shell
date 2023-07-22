@@ -1,16 +1,16 @@
 #include "shell.h"
 
 /**
- * check_chain - checks if the are the chain or not.
+ * chain_check - checks if the are the chain or not.
  * @info: the parameter passed
  * @buffer: the char buffer
  * @p: address passed
  * @i: starting point
- * @length: our lenght.
+ * @length: our length.
  *
  * Return: don't return any thing.
  */
-void check_chain(info_t *info, char *buffer,
+void chain_check(info_t *info, char *buffer,
 				 size_t *p, size_t i, size_t length)
 {
 	size_t j = *p;

@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * is_cmd - determines if a
+ * isCmd - determines if a
  * @info: the info
  * @full_path: full_path to the
  *
  * Return: 1 if true,
  */
 
-int is_cmd(info_t *info, char *full_path)
+int isCmd(info_t *info, char *full_path)
 {
 	struct stat status;
 

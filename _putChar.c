@@ -1,11 +1,11 @@
 #include "shell.h"
 /**
- * _putchar - writes in the console
- * @ch: The charactert
+ * _putcharacter - writes in the console
+ * @ch: The character
  *
  * Return: On success 1 or 0
  */
-int _putchar(char ch)
+int _putcharacter(char ch)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];

@@ -1,20 +1,20 @@
 #include "shell.h"
 
 /**
- * print_d - function prints a decimal (integer) number (base 10)
+ * printDecimal - function prints a decimal (integer) number (base 10)
  * @FD: the filedescriptor to write to
  * @input: the input
  *
  * Return: number of characters printed
  */
-int print_d(int input, int FD)
+int printDecimal(int input, int FD)
 {
-	int (*__putchar)(char) = _putchar;
+	int (*__putchar)(char) = _putcharacter;
 	int i, count = 0;
 	unsigned int _abs_, current;
 
 	if (FD == STDERR_FILENO)
-		__putchar = _eputchar;
+		__putchar = _ePutChar;
 	if (input < 0)
 	{
 		_abs_ = -input;

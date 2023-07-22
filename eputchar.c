@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _eputchar - writes the character c to stderr
+ * _ePutChar - writes the character c to stderr
  * @character: The character to print
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _eputchar(char character)
+int _ePutChar(char character)
 {
 	static int i;
 	static char buf[WRITE_BUF_SIZE];

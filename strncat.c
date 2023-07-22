@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- **_strncat - concatenates two strings
+ **_strCat - concatenates two strings
  *@destination: the first string
  *@number: the number of bytes to be maximally used
  *@source: the second string
  *Return: the concatenated string
  */
-char *_strncat(char *destination, char *source, int number)
+char *_strCat(char *destination, char *source, int number)
 {
 	int i, j;
 	char *ptr = destination;

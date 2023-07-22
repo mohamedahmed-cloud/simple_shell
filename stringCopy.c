@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _strcpy - copie
+ * _strCopy - copie
  * @destition: the destitionin
  * @source: the source
  *
  * Return: pointe
  */
-char *_strcpy(char *destition, char *source)
+char *_strCopy(char *destition, char *source)
 {
 	int i = 0;
 

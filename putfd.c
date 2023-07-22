@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _putfd - writes the character c to given fd
+ * printFd - writes the character c to given fd
  * @character: The character to print
  * @FD: The filedescriptor to write to
  *
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
  */
-int _putfd(char character, int FD)
+int printFd(char character, int FD)
 {
 	static int i;
 	static char buffer[WRITE_BUF_SIZE];

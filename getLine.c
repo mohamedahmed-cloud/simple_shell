@@ -2,14 +2,14 @@
 
 
 /**
- * _getline - gets the next line of input from STDIN
+ * _getLine - gets the next line of input from STDIN
  * @Inf: parameter struct
- * @length: size of preallocated ptr buffer if not NULL
- * @ptr: address of pointer to buffer, preallocated or NULL
+ * @length: size of reallocated ptr buffer if not NULL
+ * @ptr: address of pointer to buffer, reallocated or NULL
  *
  * Return: s
  */
-int _getline(info_t *Inf, char **ptr, size_t *length)
+int _getLine(info_t *Inf, char **ptr, size_t *length)
 {
 	static char buf[READ_BUF_SIZE];
 	static size_t i, len;
@@ -23,20 +23,20 @@ int _getline(info_t *Inf, char **ptr, size_t *length)
 	if (i == len)
 		i = len = 0;
 
-	r = read_buf(Inf, buf, &len);
+	r = readBuffer(Inf, buf, &len);
 	if (r == -1 || (r == 0 && len == 0))
 		return (-1);
 
-	c = _strchr(buf + i, '\n');
+	c = searchStr(buf + i, '\n');
 	k = c ? 1 + (unsigned int)(c - buf) : len;
-	new_p = _realloc(p, s, s ? s + k : k + 1);
+	new_p = myReallocate(p, s, s ? s + k : k + 1);
 	if (!new_p) /* MALLOC FAILURE! */
 		return (p ? free(p), -1 : -1);
 
 	if (s)
-		_strncat(new_p, buf + i, k - i);
+		_strCat(new_p, buf + i, k - i);
 	else
-		_strncpy(new_p, buf + i, k - i + 1);
+		_strcpy(new_p, buf + i, k - i + 1);
 
 	s += k - i;
 	i = k;

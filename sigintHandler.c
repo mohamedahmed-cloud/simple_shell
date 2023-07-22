@@ -7,7 +7,7 @@
  */
 void sigintHandler(__attribute__((unused))int sig_num)
 {
-	_puts("\n");
-	_puts("$ ");
-	_putchar(BUF_FLUSH);
+	printStr("\n");
+	printStr("$ ");
+	_putcharacter(BUF_FLUSH);
 }

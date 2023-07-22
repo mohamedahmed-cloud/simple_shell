@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * **strtow2 -  function kernizer 1
+ * **strSplit -  function kernizer 1
  * @string: the input
  * @dimleter: the delemieter
  * Return: a pointer.
  */
-char **strtow2(char *string, char dimleter)
+char **strSplit(const char *string, char dimleter)
 {
 	int i, j, k, m, our_words = 0;
 	char **s;
@@ -28,8 +28,6 @@ char **strtow2(char *string, char dimleter)
 		return (NULL);
 	for (i = 0, j = 0; j < our_words; j++)
 	{
-		while (string[i] == dimleter && string[i] != dimleter)
-			i++;
 		k = 0;
 		while (string[i + k] != dimleter && string[i + k]
 			   && string[i + k] != dimleter)

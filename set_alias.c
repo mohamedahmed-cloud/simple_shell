@@ -1,22 +1,22 @@
 #include "shell.h"
 
 /**
- * set_alias - sets alias to string
+ * setAlias - sets alias to string
  * @Inf: parameter struct
  * @string: the string alias
  *
  * Return: Always 0 on success, 1 on error
  */
-int set_alias(info_t *Inf, char *string)
+int setAlias(info_t *Inf, char *string)
 {
 	char *p;
 
-	p = _strchr(string, '=');
+	p = searchStr(string, '=');
 	if (!p)
 		return (1);
 	if (!*++p)
-		return (unset_alias(Inf, string));
+		return (unsetAlias(Inf, string));
 
-	unset_alias(Inf, string);
-	return (add_node_end(&(Inf->alias), string, 0) == NULL);
+	unsetAlias(Inf, string);
+	return (node_adding_end(&(Inf->alias), string, 0) == NULL);
 }

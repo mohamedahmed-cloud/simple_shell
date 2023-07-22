@@ -3,12 +3,12 @@
 
 
 /**
- * _myalias - mimics the alias builtin (man alias)
+ * _myAlias - mimics the alias builtin (man alias)
  * @Inf: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  *  Return: Always 0
  */
-int _myalias(info_t *Inf)
+int _myAlias(info_t *Inf)
 {
 	int i = 0;
 	char *p = NULL;
@@ -19,18 +19,18 @@ int _myalias(info_t *Inf)
 		node = Inf->alias;
 		while (node)
 		{
-			print_alias(node);
+			printAlias(node);
 			node = node->next;
 		}
 		return (0);
 	}
 	for (i = 1; Inf->argv[i]; i++)
 	{
-		p = _strchr(Inf->argv[i], '=');
+		p = searchStr(Inf->argv[i], '=');
 		if (p)
-			set_alias(Inf, Inf->argv[i]);
+			setAlias(Inf, Inf->argv[i]);
 		else
-			print_alias(node_starts_with(Inf->alias, Inf->argv[i], '='));
+			printAlias(getStartNode(Inf->alias, Inf->argv[i], '='));
 	}
 
 	return (0);

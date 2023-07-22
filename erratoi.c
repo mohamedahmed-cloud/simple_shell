@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * _erratoi - converts a string to an integer
+ * _errfsti - converts a string to an integer
  * @string: the string to be converted
  * Return: 0 if no numbers in string, converted number otherwise
  *       -1 on error
  */
-int _erratoi(char *string)
+int _errfsti(char *string)
 {
 	int i = 0;
 	unsigned long int result = 0;

@@ -1,14 +1,14 @@
 #include "shell.h"
 
 /**
- * _memset - fills memory
+ * setMemory - fills memory
  * @s: the pointer toa
  * @b: the byte t
  * @n: the amount o
  * Return: (s) a poi
  */
 
-char *_memset(char *s, char b, unsigned int n)
+char *setMemory(char *s, char b, unsigned int n)
 {
 	unsigned int i;
 

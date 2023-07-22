@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * find_path - find the path of command line
+ * pathFinder - find the path of command line
  * @info: the current info
  * @full_path_str: the str path
  * @command: ------------------
@@ -9,7 +9,7 @@
  * Return: return the full path
  */
 
-char *find_path(info_t *info, char *full_path_str, char *command)
+char *pathFinder(info_t *info, char *full_path_str, char *command)
 {
 	int i = 0, curr_position = 0;
 	char *path;
@@ -17,9 +17,9 @@ char *find_path(info_t *info, char *full_path_str, char *command)
 	if (!full_path_str)
 		return (NULL);
 
-	if ((_strlen(command) > 2) && starts_with(command, "./"))
+	if ((_strLen(command) > 2) && startsWith(command, "./"))
 	{
-		if (is_cmd(info, command))
+		if (isCmd(info, command))
 			return (command);
 	}
 
@@ -28,18 +28,18 @@ char *find_path(info_t *info, char *full_path_str, char *command)
 	{
 		if (!full_path_str[i] || full_path_str[i] == ':')
 		{
-			path = dup_chars(full_path_str, curr_position, i);
+			path = debugChar(full_path_str, curr_position, i);
 			if (!*path)
 			{
-				_strcat(path, command);
+				strConcat(path, command);
 			}
 			else
 			{
-				_strcat(path, "/");
-				_strcat(path, command);
+				strConcat(path, "/");
+				strConcat(path, command);
 			}
 
-			if (is_cmd(info, path))
+			if (isCmd(info, path))
 			{
 				return (path);
 				}

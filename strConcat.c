@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _strcat - concatenates
+ * strConcat - concatenates
  * @dest: th
  * @src: the
  *
  * Return: poin
  */
-char *_strcat(char *dest, char *src)
+char *strConcat(char *dest, char *src)
 {
 	char *ret = dest;
 

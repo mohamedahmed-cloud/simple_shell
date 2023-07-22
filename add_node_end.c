@@ -2,14 +2,14 @@
 
 
 /**
- * add_node_end - adds a node to the end of the list
+ * node_adding_end - adds a node to the end of the list
  * @head: address of pointer to head node
  * @number: node index used by history
  * @string: str field of node
  *
  * Return: size of list
  */
-list_t *add_node_end(list_t **head, const char *string, int number)
+list_t *node_adding_end(list_t **head, const char *string, int number)
 {
 	list_t *new_node, *node;
 
@@ -20,7 +20,7 @@ list_t *add_node_end(list_t **head, const char *string, int number)
 	new_node = malloc(sizeof(list_t));
 	if (!new_node)
 		return (NULL);
-	_memset((void *) new_node, 0, sizeof(list_t));
+	setMemory((void *) new_node, 0, sizeof(list_t));
 	new_node->num = number;
 	if (string)
 	{

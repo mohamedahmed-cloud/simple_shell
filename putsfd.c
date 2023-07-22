@@ -2,13 +2,13 @@
 
 
 /**
- * _putsfd - prints an input string
+ * _printFd - prints an input string
  * @string: the string to be printed
  * @FD: the filedescriptor to write to
  *
  * Return: the number of chars put
  */
-int _putsfd(char *string, int FD)
+int _printFd(char *string, int FD)
 {
 	int i = 0;
 
@@ -16,7 +16,7 @@ int _putsfd(char *string, int FD)
 		return (0);
 	while (*string)
 	{
-		i += _putfd(*string++, FD);
+		i += printFd(*string++, FD);
 	}
 	return (i);
 }

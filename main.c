@@ -27,20 +27,20 @@ int main(int argCount, char **argvector)
 				exit(126);
 			if (errno == ENOENT)
 			{
-				_eputs(argvector[0]);
-				_eputs(": 0: Can't open ");
-				_eputs(argvector[1]);
-				_eputchar('\n');
-				_eputchar(BUF_FLUSH);
+				_ePut(argvector[0]);
+				_ePut(": 0: Can't open ");
+				_ePut(argvector[1]);
+				_ePutChar('\n');
+				_ePutChar(BUF_FLUSH);
 				exit(127);
 			}
 			return (EXIT_FAILURE);
 		}
 		info_array->readfd = foundCommand;
 	}
-	populate_env_list(info_array);
-	read_history(info_array);
-	hsh(info_array, argvector);
+	fillEnvList(info_array);
+	readHistory(info_array);
+	shellLoop(info_array, argvector);
 	return (EXIT_SUCCESS);
 }
 

@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
- * remove_comments - function replaces first instance of '#' with '\0'
+ * removeComments - function replaces first instance of '#' with '\0'
  * @buffer: address of the string to modify
  *
  * Return: Always 0;
  */
-void remove_comments(char *buffer)
+void removeComments(char *buffer)
 {
 	int i;
 

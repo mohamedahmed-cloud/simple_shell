@@ -1,13 +1,13 @@
 #include "shell.h"
 
 /**
- * _strcmp - performs lexicog
+ * _strComp - performs lexicog
  * @string1: first string
  * @string2: second string.
  *
  * Return: return the string after concation.
  */
-int _strcmp(char *string1, char *string2)
+int _strComp(char *string1, char *string2)
 {
 	while (*string1 && *string2)
 	{

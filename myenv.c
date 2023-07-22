@@ -2,13 +2,13 @@
 
 
 /**
- * _myenv - prints the current environment
+ * _printEnv - prints the current environment
  * @Inf: Structure containing potential arguments. Used to maintain
  *          constant function prototype.
  * Return: Always 0
  */
-int _myenv(info_t *Inf)
+int _printEnv(info_t *Inf)
 {
-	print_list_str(Inf->env);
+	printStringList(Inf->env);
 	return (0);
 }
