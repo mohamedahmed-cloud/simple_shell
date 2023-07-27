@@ -38,5 +38,6 @@ list_t *node_adding_end(list_t **head, const char *string, int number)
 		node->next = new_node;
 	} else
 		*head = new_node;
+	
 	return (new_node);
 }
