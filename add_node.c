@@ -31,4 +31,5 @@ list_t *node_adding(list_t **head, const char *string, int number)
 	new_head->next = *head;
 	*head = new_head;
 	return (new_head);
+	
 }
